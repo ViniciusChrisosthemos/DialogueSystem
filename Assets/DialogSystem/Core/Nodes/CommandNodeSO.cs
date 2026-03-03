@@ -1,20 +1,17 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace DialogueSystem
 {
-    [Serializable]
-    public class ChoiceOption
+
+    [CreateAssetMenu(fileName = "CommandNode_", menuName = "ScriptableObjects/Dialogue System/Command Node SO")]
+    public class CommandNodeSO : DialogueNodeSO
     {
-        [SerializeField] private string m_description;
         [SerializeField] private string m_commandID;
         [SerializeField] private string m_payloadJson;
-        [SerializeField] private DialogueNodeSO m_nextNode;
 
-        public string Description => m_description;
         public string CommandID => m_commandID;
         public string PayloadJson => m_payloadJson;
-        public DialogueNodeSO NextNode => m_nextNode;
+
     }
 }

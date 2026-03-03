@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70b9cb9343ba4e6428b67db50787a0d7, type: 3}
+  m_Name: Introduction_2_ChoiceNode
+  m_EditorClassIdentifier: 
+  m_nextNode: {fileID: 0}
+  m_options:
+  - m_description: "Op\xE7\xE3o 1"
+    m_commandID: 
+    m_payloadJson: 
+    m_nextNode: {fileID: 11400000, guid: 17844e22f0c6f9f439fbdec9dbd00389, type: 2}
+  - m_description: "Op\xE7\xE3o 2"
+    m_commandID: 
+    m_payloadJson: 
+    m_nextNode: {fileID: 11400000, guid: e526234fe5d51af409ad613e88637c4d, type: 2}
+  - m_description: "Op\xE7\xE3o 3"
+    m_commandID: 
+    m_payloadJson: 
+    m_nextNode: {fileID: 11400000, guid: 1140523f615db724d87ebd73f533fdfa, type: 2}
