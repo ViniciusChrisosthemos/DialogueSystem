@@ -1,6 +1,7 @@
 using UnityEngine;
 using DialogueSystem;
 using System;
+using Newtonsoft.Json;
 
 public class SocialStatsCommandExecutor : IDialogueCommandExecutor
 {
@@ -15,30 +16,23 @@ public class SocialStatsCommandExecutor : IDialogueCommandExecutor
 
     public void Execute(string commandID, string payloadJson)
     {
-        switch (commandID)
+        dynamic jsonData = JsonConvert.DeserializeObject<dynamic>(payloadJson);
+
+        string eventID = jsonData.EventID;
+
+        switch (eventID)
         {
-            case INCREASE_STAT_EVENT: HandleSocialStatEvent(payloadJson); break;
+            case INCREASE_STAT_EVENT:
+                string statID = jsonData.StatID;
+                int amount = jsonData.Amount;
+
+                m_socialStatManager.IncreaseStat(statID, amount);
+
+                break;
 
             default: 
                 Debug.Log($"[{GetType()}][Execute] Event {commandID} not found!"); 
                 break;
         }
-    }
-
-    private void HandleSocialStatEvent(string payloadJson)
-    {
-        var increaseStatData = JsonUtility.FromJson<IncreaseStatData>(payloadJson);
-
-        Debug.Log($"{m_socialStatManager} {increaseStatData} {payloadJson}");
-
-        m_socialStatManager.IncreaseStat(increaseStatData.StatID, increaseStatData.Amount);
-    }
-
-
-    [Serializable]
-    private class IncreaseStatData
-    {
-        public string StatID;
-        public int Amount;
     }
 }

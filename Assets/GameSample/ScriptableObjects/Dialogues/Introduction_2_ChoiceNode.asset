@@ -24,6 +24,5 @@ MonoBehaviour:
     m_nextNode: {fileID: 11400000, guid: e526234fe5d51af409ad613e88637c4d, type: 2}
   - m_description: "Op\xE7\xE3o 3"
     m_commandID: social-stat
-    m_payloadJson: '"{"EventID":"increase-stat", "Args":{"StatID": "Charisma", "Amount":
-      1}}"'
+    m_payloadJson: '{"EventID":"increase-stat", "StatID": "Charisma", "Amount": 1}'
     m_nextNode: {fileID: 11400000, guid: 1140523f615db724d87ebd73f533fdfa, type: 2}
